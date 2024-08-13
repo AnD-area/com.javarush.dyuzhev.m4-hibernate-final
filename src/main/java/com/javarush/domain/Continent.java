@@ -8,14 +8,4 @@ public enum Continent {
     OCEANIA,
     ANTARCTICA,
     SOUTH_AMERICA;
-
-//    private final String value;
-//
-//    Continent(String value) {
-//        this.value = value;
-//    }
-//
-//    public String getValue() {
-//        return value;
-//    }
 }

@@ -2,7 +2,9 @@ package com.javarush.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -60,11 +62,13 @@ public class Country {
     @Column(name = "head_of_state")
     private String headOfState;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "capital")
     private City city;
 
     @OneToMany(fetch = FetchType.EAGER)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     @JoinColumn(name = "country_id")
     private Set<CountryLanguage> languages;
 }

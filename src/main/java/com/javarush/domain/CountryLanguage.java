@@ -2,6 +2,7 @@ package com.javarush.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
 
@@ -19,6 +20,7 @@ public class CountryLanguage {
     private Integer id;
 
     @ManyToOne
+    @EqualsAndHashCode.Exclude
     @JoinColumn(name = "country_id")
     private Country country;
 

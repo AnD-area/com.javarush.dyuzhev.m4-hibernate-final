@@ -2,7 +2,9 @@ package com.javarush.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table(schema = "world", name = "city")
@@ -19,6 +21,8 @@ public class City {
     private String name;
 
     @ManyToOne
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @JoinColumn(name = "country_id")
     private Country country;
 
